@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul - AI Solutions & Web Development | Pricing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #ec4899;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --card-bg: rgba(30, 41, 59, 0.6);
+            --border: rgba(148, 163, 184, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            top: -100px;
+            left: -100px;
+            opacity: 0.15;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .bg-animation::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);
+            bottom: -150px;
+            right: -150px;
+            opacity: 0.1;
+            animation: float 25s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, -50px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--light);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.25rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, var(--gray) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--light);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.125rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.3);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            position: relative;
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--secondary);
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(236, 72, 153, 0.25);
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 12px;
+            right: -30px;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            padding: 0.25rem 2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+            width: 150px;
+            text-align: center;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 30px 60px -15px rgba(99, 102, 241, 0.3);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .plan-icon {
+            font-size: 1.25rem;
+        }
+
+        .plan-description {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, var(--gray));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.25rem;
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray);
+            -webkit-text-fill-color: var(--gray);
+        }
+
+        .price-note {
+            color: var(--gray);
+            font-size: 0.875rem;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .features li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--gray);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .features li:last-child {
+            border-bottom: none;
+        }
+
+        .features li i {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .features li.included i {
+            color: #10b981;
+        }
+
+        .features li.not-included {
+            opacity: 0.5;
+        }
+
+        .features li.not-included i {
+            color: var(--gray);
+        }
+
+        .pricing-btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 12px;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--light);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .pricing-btn:hover {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-color: transparent;
+            transform: scale(1.02);
+        }
+
+        .pricing-card.featured .pricing-btn {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            border-color: transparent;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 5%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 30px -10px rgba(6, 182, 212, 0.2);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .contact-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a, .contact-card p {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            color: var(--gray);
+            margin-top: 4rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.25rem;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        /* Scroll Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particle-float 15s infinite;
+        }
+
+        @keyframes particle-float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: scale(1) translateY(-10px);
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--darker);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">Rahul.Dev</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="badge">
+                <i class="fas fa-circle-check"></i>
+                Available for Freelance Work
+            </div>
+            <h1>Transform Your Business with <span>AI & Web Solutions</span></h1>
+            <p>Professional freelancer specializing in AI-powered chatbots, web applications, and custom software development. Based in Jaipur, Rajasthan.</p>
+            <div class="cta-buttons">
+                <a href="#pricing" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    View Pricing
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header scroll-reveal">
+            <h2>My Services</h2>
+            <p>Cutting-edge solutions tailored to your business needs</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card scroll-reveal">
+                <div class="service-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI Chatbot Development</h3>
+                <p>Intelligent conversational AI powered by OpenAI. Custom chatbots for customer support, lead generation, and automation.</p>
+                <div class="project-links">
+                    <a href="https://agrahul2001.github.io/Open_Ai/" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Demo
+                    </a>
+                </div>
+            </div>
+
+            <div class="service-card scroll-reveal">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Web Application Development</h3>
+                <p>Modern, responsive web applications built with latest technologies. Scalable solutions for businesses of all sizes.</p>
+                <div class="project-links">
+                    <a href="https://agrahul2001.github.io/OpenAiPart2/" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                        View Demo
+                    </a>
+                </div>
+            </div>
+
+            <div class="service-card scroll-reveal">
+                <div class="service-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3>AI Integration Services</h3>
+                <p>Seamlessly integrate AI capabilities into your existing systems. From NLP to computer vision solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="section-header scroll-reveal">
+            <h2>Transparent Pricing</h2>
+            <p>Choose the perfect plan for your project requirements</p>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Silver Plan -->
+            <div class="pricing-card scroll-reveal">
+                <div class="plan-name">
+                    <span class="plan-icon">🥈</span>
+                    Silver
+                </div>
+                <div class="plan-description">Perfect for startups and small projects</div>
+                <div class="price">₹9,999 <span>/project</span></div>
+                <div class="price-note">One-time payment</div>
+                <ul class="features">
+                    <li class="included"><i class="fas fa-check"></i> Single Page Website</li>
+                    <li class="included"><i class="fas fa-check"></i> Basic AI Chatbot</li>
+                    <li class="included"><i class="fas fa-check"></i> 5 Pages Max</li>
+                    <li class="included"><i class="fas fa-check"></i> Mobile Responsive</li>
+                    <li class="included"><i class="fas fa-check"></i> 1 Week Delivery</li>
+                    <li class="not-included"><i class="fas fa-times"></i> Custom AI Training</li>
+                    <li class="not-included"><i class="fas fa-times"></i> Advanced Analytics</li>
+                    <li class="not-included"><i class="fas fa-times"></i> Priority Support</li>
+                </ul>
+                <button class="pricing-btn" onclick="contactForPlan('Silver')">Get Started</button>
+            </div>
+
+            <!-- Gold Plan -->
+            <div class="pricing-card featured scroll-reveal">
+                <div class="plan-name">
+                    <span class="plan-icon">🥇</span>
+                    Gold
+                </div>
+                <div class="plan-description">Best value for growing businesses</div>
+                <div class="price">₹10,999 <span>/project</span></div>
+                <div class="price-note">One-time payment</div>
+                <ul class="features">
+                    <li class="included"><i class="fas fa-check"></i> Multi-Page Website</li>
+                    <li class="included"><i class="fas fa-check"></i> Advanced AI Chatbot</li>
+                    <li class="included"><i class="fas fa-check"></i> 10 Pages Max</li>
+                    <li class="included"><i class="fas fa-check"></i> Mobile Responsive</li>
+                    <li class="included"><i class="fas fa-check"></i> 2 Weeks Delivery</li>
+                    <li class="included"><i class="fas fa-check"></i> Basic Analytics Dashboard</li>
+                    <li class="not-included"><i class="fas fa-times"></i> Custom AI Training</li>
+                    <li class="not-included"><i class="fas fa-times"></i> 24/7 Priority Support</li>
+                </ul>
+                <button class="pricing-btn" onclick="contactForPlan('Gold')">Get Started</button>
+            </div>
+
+            <!-- Platinum Plan -->
+            <div class="pricing-card scroll-reveal">
+                <div class="plan-name">
+                    <span class="plan-icon">💎</span>
+                    Platinum
+                </div>
+                <div class="plan-description">Full-featured enterprise solution</div>
+                <div class="price">₹15,999 <span>/project</span></div>
+                <div class="price-note">One-time payment</div>
+                <ul class="features">
+                    <li class="included"><i class="fas fa-check"></i> Unlimited Pages</li>
+                    <li class="included"><i class="fas fa-check"></i> Custom AI Chatbot</li>
+                    <li class="included"><i class="fas fa-check"></i> AI Training & Setup</li>
+                    <li class="included"><i class="fas fa-check"></i> Advanced Analytics</li>
+                    <li class="included"><i class="fas fa-check"></i> 3 Weeks Delivery</li>
+                    <li class="included"><i class="fas fa-check"></i> Admin Dashboard</li>
+                    <li class="included"><i class="fas fa-check"></i> 3 Months Support</li>
+                    <li class="not-included"><i class="fas fa-times"></i> Dedicated Server</li>
+                </ul>
+                <button class="pricing-btn" onclick="contactForPlan('Platinum')">Get Started</button>
+            </div>
+
+            <!-- Diamond Plan -->
+            <div class="pricing-card scroll-reveal">
+                <div class="plan-name">
+                    <span class="plan-icon">👑</span>
+                    Diamond
+                </div>
+                <div class="plan-description">Premium enterprise package</div>
+                <div class="price">₹25,999 <span>/project</span></div>
+                <div class="price-note">One-time payment</div>
+                <ul class="features">
+                    <li class="included"><i class="fas fa-check"></i> Everything in Platinum</li>
+                    <li class="included"><i class="fas fa-check"></i> Dedicated AI Model</li>
+                    <li class="included"><i class="fas fa-check"></i> Full-Stack Application</li>
+                    <li class="included"><i class="fas fa-check"></i> Database Integration</li>
+                    <li class="included"><i class="fas fa-check"></i> Priority Delivery</li>
+                    <li class="included"><i class="fas fa-check"></i> 6 Months Support</li>
+                    <li class="included"><i class="fas fa-check"></i> 24/7 Priority Support</li>
+                    <li class="included"><i class="fas fa-check"></i> Free Maintenance (3 Months)</li>
+                </ul>
+                <button class="pricing-btn" onclick="contactForPlan('Diamond')">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header scroll-reveal">
+            <h2>Let's Work Together</h2>
+            <p>Ready to start your project? Reach out today</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card scroll-reveal">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <h3>Phone</h3>
+                <a href="tel:+917850047502">+91 78500 47502</a>
+            </div>
+
+            <div class="contact-card scroll-reveal">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <a href="mailto:Efficient.rahul.traveler@gmail.com">Efficient.rahul.traveler@gmail.com</a>
+            </div>
+
+            <div class="contact-card scroll-reveal">
+                <div class="contact-icon">
+                    <i class="fas fa-location-dot"></i>
+                </div>
+                <h3>Location</h3>
+                <p>Jaipur, Rajasthan, India</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/agrahul2001" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:Efficient.rahul.traveler@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+917850047502"><i class="fas fa-phone"></i></a>
+        </div>
+        <p> Rahul. All rights reserved. | Freelance AI & Web Developer</p>
+        <p style="margin-top: 0.5rem; font-size: 0.875rem;">Based in Jaipur, Rajasthan</p>
+    </footer>
+
+    <script>
+        // Particle Animation
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.width = particle.style.height = (Math.random() * 4 + 2) + 'px';
+                container.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".scroll-reveal");
+            
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger once on load
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '1rem 5%';
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+            } else {
+                navbar.style.padding = '1.5rem 5%';
+                navbar.style.background = 'rgba(15, 23, 42, 0.8)';
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Contact Plan Function
+        function contactForPlan(plan) {
+            const message = `Hi Rahul, I'm interested in the ${plan} plan. Please provide more details.`;
+            window.location.href = `mailto:Efficient.rahul.traveler@gmail.com?subject=Interest in ${plan} Plan&body=${encodeURIComponent(message)}`;
+        }
+
+        // Counter Animation for Prices
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = '₹' + Math.floor(progress * (end - start) + start).toLocaleString() + ' <span>/project</span>';
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Trigger price animation when pricing section is visible
+        const priceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const prices = entry.target.querySelectorAll('.price');
+                    prices.forEach((price, index) => {
+                        const values = [9999, 10999, 15999, 25999];
+                        setTimeout(() => {
+                            animateValue(price, 0, values[index], 1500);
+                        }, index * 200);
+                    });
+                    priceObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const pricingSection = document.querySelector('.pricing-grid');
+        if (pricingSection) {
+            priceObserver.observe(pricingSection);
+        }
+    </script>
+</body>
+</html>
