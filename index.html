@@ -24,6 +24,8 @@
             --gray: #94a3b8;
             --card-bg: rgba(30, 41, 59, 0.6);
             --border: rgba(148, 163, 184, 0.1);
+            --gold: #fbbf24;
+            --gold-light: #f59e0b;
         }
 
         body {
@@ -366,6 +368,289 @@
             transform: translateX(5px);
         }
 
+        /* COUPON SECTION - NEW */
+        .coupon-section {
+            padding: 4rem 5%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .coupon-container {
+            position: relative;
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.05));
+            border: 2px dashed var(--gold);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            overflow: hidden;
+            animation: coupon-glow 3s infinite;
+        }
+
+        @keyframes coupon-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.1); }
+            50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.3); }
+        }
+
+        .coupon-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(251, 191, 36, 0.03), transparent);
+            animation: coupon-shine 6s infinite;
+        }
+
+        @keyframes coupon-shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .coupon-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--darker);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            animation: badge-bounce 2s infinite;
+        }
+
+        @keyframes badge-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .coupon-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(135deg, var(--gold), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .coupon-subtitle {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .coupon-code-box {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(15, 23, 42, 0.8);
+            border: 2px solid var(--gold);
+            border-radius: 16px;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .coupon-code-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.2);
+        }
+
+        .coupon-code-box.copied {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.1);
+        }
+
+        .coupon-code {
+            font-family: 'Courier New', monospace;
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            color: var(--gold);
+        }
+
+        .copy-icon {
+            color: var(--gold);
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .coupon-code-box:hover .copy-icon {
+            transform: scale(1.2);
+        }
+
+        .coupon-savings {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+
+        .saving-item {
+            text-align: center;
+        }
+
+        .saving-item .label {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin-bottom: 0.25rem;
+        }
+
+        .saving-item .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .saving-item .value.strike {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1.25rem;
+        }
+
+        /* Countdown Timer */
+        .countdown-container {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+            border: 1px solid rgba(251, 191, 36, 0.2);
+        }
+
+        .countdown-label {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .countdown-label i {
+            color: #ef4444;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .time-unit {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(245, 158, 11, 0.1));
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            min-width: 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .time-unit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            animation: time-flow 1s linear infinite;
+        }
+
+        @keyframes time-flow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .time-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+            display: block;
+            line-height: 1;
+        }
+
+        .time-label {
+            font-size: 0.75rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        .days-left-text {
+            margin-top: 1rem;
+            font-size: 1.125rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .days-left-text .highlight {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-top: 1rem;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            border-radius: 3px;
+            transition: width 1s ease;
+            position: relative;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5));
+            animation: progress-shine 2s infinite;
+        }
+
+        @keyframes progress-shine {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(20px); }
+        }
+
         /* Pricing Section */
         .pricing {
             padding: 6rem 5%;
@@ -421,6 +706,15 @@
             transform: scale(1.05) translateY(-10px);
         }
 
+        .pricing-card.diamond-coupon {
+            border-color: var(--gold);
+            box-shadow: 0 0 30px rgba(251, 191, 36, 0.15);
+        }
+
+        .pricing-card.diamond-coupon:hover {
+            box-shadow: 0 0 50px rgba(251, 191, 36, 0.25);
+        }
+
         .plan-name {
             font-size: 1.5rem;
             font-weight: 700;
@@ -441,8 +735,12 @@
         }
 
         .price {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.35rem;
             font-size: 3rem;
             font-weight: 800;
+            line-height: 1;
             background: linear-gradient(135deg, #fff, var(--gray));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -451,6 +749,7 @@
         }
 
         .price span {
+            display: inline-block;
             font-size: 1rem;
             font-weight: 400;
             color: var(--gray);
@@ -461,6 +760,26 @@
             color: var(--gray);
             font-size: 0.875rem;
             margin-bottom: 2rem;
+        }
+
+        .coupon-applied {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(251, 191, 36, 0.15);
+            border: 1px solid var(--gold);
+            border-radius: 8px;
+            color: var(--gold);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            animation: coupon-pulse 2s infinite;
+        }
+
+        @keyframes coupon-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
 
         .features {
@@ -521,6 +840,17 @@
         .pricing-card.featured .pricing-btn {
             background: linear-gradient(135deg, var(--secondary), var(--primary));
             border-color: transparent;
+        }
+
+        .pricing-card.diamond-coupon .pricing-btn {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--darker);
+            border-color: transparent;
+            font-weight: 700;
+        }
+
+        .pricing-card.diamond-coupon .pricing-btn:hover {
+            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
         }
 
         /* Contact Section */
@@ -675,6 +1005,52 @@
             }
         }
 
+        /* Confetti Animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--gold);
+            position: absolute;
+            animation: confetti-fall 3s ease-out forwards;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            transform: translateX(400px);
+            transition: transform 0.4s ease;
+            z-index: 10000;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -691,6 +1067,24 @@
             
             .pricing-card.featured:hover {
                 transform: scale(1) translateY(-10px);
+            }
+
+            .coupon-container {
+                padding: 2rem 1rem;
+            }
+
+            .coupon-code {
+                font-size: 1.25rem;
+                letter-spacing: 2px;
+            }
+
+            .time-unit {
+                padding: 0.75rem 1rem;
+                min-width: 60px;
+            }
+
+            .time-value {
+                font-size: 1.5rem;
             }
         }
 
@@ -726,6 +1120,7 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#coupon">Special Offer</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -766,11 +1161,11 @@
                     <i class="fas fa-robot"></i>
                 </div>
                 <h3>AI Chatbot Development</h3>
-                <p>Intelligent conversational AI powered by OpenAI. Custom chatbots for customer support, lead generation, and automation.</p>
+                <p>Intelligent conversational AI powered by OpenAI.  lead generation, and automation.</p>
                 <div class="project-links">
                     <a href="https://agrahul2001.github.io/Open_Ai/" target="_blank" class="project-link">
                         <i class="fas fa-external-link-alt"></i>
-                        View Demo
+                        View Demo 1
                     </a>
                 </div>
             </div>
@@ -780,7 +1175,7 @@
                     <i class="fas fa-code"></i>
                 </div>
                 <h3>Web Application Development</h3>
-                <p>Modern, responsive web applications built with latest technologies. Scalable solutions for businesses of all sizes.</p>
+                <p>Modern, responsive web applications built with latest technologies. Custom chatbots for customer support ,  Scalable solutions for businesses of all sizes.</p>
                 <div class="project-links">
                     <a href="https://agrahul2001.github.io/OpenAiPart2/" target="_blank" class="project-link">
                         <i class="fas fa-external-link-alt"></i>
@@ -795,6 +1190,74 @@
                 </div>
                 <h3>AI Integration Services</h3>
                 <p>Seamlessly integrate AI capabilities into your existing systems. From NLP to computer vision solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COUPON SECTION -->
+    <section class="coupon-section" id="coupon">
+        <div class="coupon-container scroll-reveal">
+            <div class="coupon-badge">
+                <i class="fas fa-crown"></i>
+                DIAMOND EXCLUSIVE
+            </div>
+            
+            <h2 class="coupon-title">Limited Time Offer!</h2>
+            <p class="coupon-subtitle">Get 10% OFF on Diamond Plan - This Week Only</p>
+            
+            <div class="coupon-savings">
+                <div class="saving-item">
+                    <div class="label">Original Price</div>
+                    <div class="value strike">₹25,999</div>
+                </div>
+                <div class="saving-item">
+                    <div class="label">You Save</div>
+                    <div class="value">₹2,600</div>
+                </div>
+                <div class="saving-item">
+                    <div class="label">Final Price</div>
+                    <div class="value">₹23,399</div>
+                </div>
+            </div>
+
+            <div class="coupon-code-box" id="couponCodeBox" onclick="copyCoupon()">
+                <span class="coupon-code" id="couponCode">DIAMOND10</span>
+                <i class="fas fa-copy copy-icon" id="copyIcon"></i>
+            </div>
+            <p style="color: var(--gray); font-size: 0.875rem; margin-top: -1rem; margin-bottom: 1rem; position: relative; z-index: 1;">Click to copy code</p>
+
+            <div class="countdown-container">
+                <div class="countdown-label">
+                    <i class="fas fa-fire"></i>
+                    Offer Ends This Sunday Night
+                </div>
+                
+                <div class="countdown-timer" id="countdownTimer">
+                    <div class="time-unit">
+                        <span class="time-value" id="days">00</span>
+                        <div class="time-label">Days</div>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-value" id="hours">00</span>
+                        <div class="time-label">Hours</div>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-value" id="minutes">00</span>
+                        <div class="time-label">Minutes</div>
+                    </div>
+                    <div class="time-unit">
+                        <span class="time-value" id="seconds">00</span>
+                        <div class="time-label">Seconds</div>
+                    </div>
+                </div>
+
+                <div class="days-left-text" id="daysLeftText">
+                    Only <span class="highlight" id="daysLeft">0</span> days left to claim this offer!
+                </div>
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -873,15 +1336,27 @@
                 <button class="pricing-btn" onclick="contactForPlan('Platinum')">Get Started</button>
             </div>
 
-            <!-- Diamond Plan -->
-            <div class="pricing-card scroll-reveal">
+            <!-- Diamond Plan with Coupon -->
+            <div class="pricing-card diamond-coupon scroll-reveal">
                 <div class="plan-name">
                     <span class="plan-icon">👑</span>
                     Diamond
                 </div>
                 <div class="plan-description">Premium enterprise package</div>
-                <div class="price">₹25,999 <span>/project</span></div>
-                <div class="price-note">One-time payment</div>
+                
+                <div class="coupon-applied">
+                    <i class="fas fa-tag"></i>
+                    10% OFF with DIAMOND10
+                </div>
+
+                <div class="price" style="font-size: 2rem; text-decoration: line-through; color: var(--gray); -webkit-text-fill-color: var(--gray);">
+                    ₹25,999
+                </div>
+                <div class="price" style="color: var(--gold); -webkit-text-fill-color: var(--gold);">
+                    ₹23,399 <span>/project</span>
+                </div>
+                <div class="price-note" style="color: var(--gold);">You save ₹2,600!</div>
+
                 <ul class="features">
                     <li class="included"><i class="fas fa-check"></i> Everything in Platinum</li>
                     <li class="included"><i class="fas fa-check"></i> Dedicated AI Model</li>
@@ -892,7 +1367,7 @@
                     <li class="included"><i class="fas fa-check"></i> 24/7 Priority Support</li>
                     <li class="included"><i class="fas fa-check"></i> Free Maintenance (3 Months)</li>
                 </ul>
-                <button class="pricing-btn" onclick="contactForPlan('Diamond')">Get Started</button>
+                <button class="pricing-btn" onclick="contactForPlan('Diamond (with DIAMOND10 coupon)')">Claim Offer Now</button>
             </div>
         </div>
     </section>
@@ -941,6 +1416,12 @@
         <p> Rahul. All rights reserved. | Freelance AI & Web Developer</p>
         <p style="margin-top: 0.5rem; font-size: 0.875rem;">Based in Jaipur, Rajasthan</p>
     </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Coupon code copied to clipboard!</span>
+    </div>
 
     <script>
         // Particle Animation
@@ -1007,6 +1488,141 @@
             window.location.href = `mailto:Efficient.rahul.traveler@gmail.com?subject=Interest in ${plan} Plan&body=${encodeURIComponent(message)}`;
         }
 
+        // COUPON FUNCTIONALITY
+        function getEndOfWeek() {
+            const now = new Date();
+            const dayOfWeek = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+            const daysUntilSunday = 7 - dayOfWeek;
+            const endOfWeek = new Date(now);
+            endOfWeek.setDate(now.getDate() + daysUntilSunday);
+            endOfWeek.setHours(23, 59, 59, 999);
+            return endOfWeek;
+        }
+
+        function getStartOfWeek() {
+            const now = new Date();
+            const dayOfWeek = now.getDay();
+            const daysSinceMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+            const startOfWeek = new Date(now);
+            startOfWeek.setDate(now.getDate() - daysSinceMonday);
+            startOfWeek.setHours(0, 0, 0, 0);
+            return startOfWeek;
+        }
+
+        function updateCountdown() {
+            const now = new Date();
+            const endOfWeek = getEndOfWeek();
+            const startOfWeek = getStartOfWeek();
+            const totalWeekTime = endOfWeek - startOfWeek;
+            const timeRemaining = endOfWeek - now;
+
+            if (timeRemaining <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                document.getElementById('daysLeftText').innerHTML = '<span style="color: #ef4444;">Offer Expired!</span>';
+                document.getElementById('progressBar').style.width = '100%';
+                return;
+            }
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            document.getElementById('daysLeft').textContent = days;
+
+            // Update progress bar
+            const elapsed = now - startOfWeek;
+            const progress = (elapsed / totalWeekTime) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+
+            // Urgency color change
+            const daysLeftText = document.getElementById('daysLeftText');
+            if (days <= 1) {
+                daysLeftText.style.color = '#ef4444';
+            } else if (days <= 3) {
+                daysLeftText.style.color = '#f59e0b';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Copy Coupon Function
+        function copyCoupon() {
+            const couponCode = document.getElementById('couponCode').textContent;
+            const couponBox = document.getElementById('couponCodeBox');
+            const copyIcon = document.getElementById('copyIcon');
+            
+            navigator.clipboard.writeText(couponCode).then(() => {
+                // Visual feedback
+                couponBox.classList.add('copied');
+                copyIcon.className = 'fas fa-check copy-icon';
+                copyIcon.style.color = '#10b981';
+                
+                // Show toast
+                showToast();
+                
+                // Create confetti effect
+                createConfetti();
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    couponBox.classList.remove('copied');
+                    copyIcon.className = 'fas fa-copy copy-icon';
+                    copyIcon.style.color = '';
+                }, 2000);
+            }).catch(err => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = couponCode;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast();
+            });
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function createConfetti() {
+            const colors = ['#fbbf24', '#f59e0b', '#ec4899', '#6366f1', '#06b6d4'];
+            const container = document.querySelector('.coupon-container');
+            const rect = container.getBoundingClientRect();
+            
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = (rect.left + Math.random() * rect.width) + 'px';
+                confetti.style.top = rect.top + 'px';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = (Math.random() * 8 + 4) + 'px';
+                confetti.style.height = (Math.random() * 8 + 4) + 'px';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                confetti.style.animationDelay = (Math.random() * 0.5) + 's';
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 4000);
+            }
+        }
+
+        /*
         // Counter Animation for Prices
         function animateValue(obj, start, end, duration) {
             let startTimestamp = null;
@@ -1041,6 +1657,7 @@
         if (pricingSection) {
             priceObserver.observe(pricingSection);
         }
+        */
     </script>
 </body>
 </html>
